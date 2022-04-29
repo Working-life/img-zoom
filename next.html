@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+<style>
+    img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: rgb(177, 14, 14);
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  border-radius: 3px 0 0 3px;
+  left: 46%;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mySlides">
+                    <div class="numbertext">1 / 6</div>
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/15/a4/9b/77/legacy-hotel-at-img-academy.jpg" id="myimage" style="width: 636px; height: 500px;">
+                  </div>
+                
+                  <div class="mySlides">
+                    <div class="numbertext">2 / 6</div>
+                    <img src="https://www.tandemconstruction.com/sites/default/files/styles/project_slider_main/public/images/project-images/IMG-Fieldhouse-10.jpg?itok=Whi8hHo9" id="myimage1" style="width: 636px; height: 500px;">
+                  </div>
+                
+                  <div class="mySlides">
+                    <div class="numbertext">3 / 6</div>
+                    <video width="638" height="500" controls>
+                        <source src="file_example_MP4_480_1_5MG.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                      </video>
+                    <!-- <video src="C:\Users\WUB\Desktop\zoom and video\file_example_MP4_480_1_5MG.mp4" style="width:80%"></video> -->
+                  </div>
+                    
+                  <div class="mySlides">
+                    <div class="numbertext">4 / 6</div>
+                    <img src="https://images.adsttc.com/media/images/5891/2fef/e58e/ceb7/6c00/005d/large_jpg/01_One_on_one_Moreno_Architecture.jpg?1485909986" id="myimage2" style="width: 636px; height: 500px;">
+                  </div>
+                
+                  <div class="mySlides">
+                    <div class="numbertext">5 / 6</div>
+                    <img src="3b17007212b1c51ff4ea65f547f7addc.jpg" id="myimage3" style="width: 636px; height: 500px;">
+                  </div>
+                    
+                  <div class="mySlides">
+                    <div class="numbertext">6 / 6</div>
+                    <img src="25-11-49th-Avenue-After-1920x1440.jpg" id="myimage4" style="width: 636px; height: 500px;">
+                  </div>
+                    
+                  <!-- <a class="prev" onclick="plusSlides(-1)">❮</a>
+                  <a class="next" onclick="plusSlides(1)">❯</a> -->
+                
+                  <div class="caption-container">
+                    <p id="caption"></p>
+                  </div>
+                
+                  <div class="row">
+                    <div class="column">
+                      <img class="demo cursor" src="https://media-cdn.tripadvisor.com/media/photo-s/15/a4/9b/77/legacy-hotel-at-img-academy.jpg" style="width:87px; height: 100px;"  onclick="currentSlide(1)" alt="The Woods">
+                    </div>
+                    <div class="column">
+                      <img class="demo cursor" src="https://www.tandemconstruction.com/sites/default/files/styles/project_slider_main/public/images/project-images/IMG-Fieldhouse-10.jpg?itok=Whi8hHo9" style="width:87px; height: 100px;"onclick="currentSlide(2)" alt="Cinque Terre">
+                    </div>
+                    <div class="column">
+                        
+                
+                      <img class="demo cursor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3LhNacWcQnVzc2N-M0plMYZUdYxtaPVrLSGrkm8Ek7_E6S8RdeIGGLEkYDZpcDgJR9iI&usqp=CAU" style="width:87px; height: 100px;" onclick="currentSlide(3)" alt="Mountains and fjords">
+                    </div>
+                    <div class="column">
+                      <img class="demo cursor" src="https://images.adsttc.com/media/images/5891/2fef/e58e/ceb7/6c00/005d/large_jpg/01_One_on_one_Moreno_Architecture.jpg?1485909986" style="width:87px; height: 100px;" onclick="currentSlide(4)" alt="Northern Lights">
+                    </div>
+                    <div class="column">
+                      <img class="demo cursor" src="3b17007212b1c51ff4ea65f547f7addc.jpg" style="width:87px; height: 100px;" onclick="currentSlide(5)" alt="Nature and sunrise">
+                    </div>    
+                    <div class="column">
+                      <img class="demo cursor" src="25-11-49th-Avenue-After-1920x1440.jpg" style="width:87px; height: 100px;" onclick="currentSlide(6)" alt="Snowy Mountains">
+                    </div>
+                  </div>
+
+                  <a class="prev"  onclick="plusSlides(-1)">❮</a>
+                  <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+            <div class="col-md-6">
+                
+            </div>
+        </div>
+  
+      </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script src="zoomsl.min.js"></script>
+<script>
+    $('#myimage').imagezoomsl();
+    $('#myimage1').imagezoomsl();
+    $('#myimage2').imagezoomsl();
+    $('#myimage3').imagezoomsl();
+    $('#myimage4').imagezoomsl();
+
+
+
+</script>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("demo");
+      let captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+</body>
+</html>
